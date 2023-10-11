@@ -7,6 +7,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	// site: 'https://example.com',
 	site: 'https://chalermporn.github.io',
-	integrations: [mdx(), sitemap()],
-	// base: '/my-repo',
+	base: '/my-repo',
 });
