@@ -7,7 +7,7 @@ import { defineConfig } from "astro/config";
 //  • project site   (repo ชื่ออื่น เช่น "me")          →  site: "https://<username>.github.io", base: "/me"
 // ──────────────────────────────────────────────────────────────
 export default defineConfig({
-  site: "https://example.github.io",
+  site: "https://chalermporn.github.io",
   base: "/",
   trailingSlash: "ignore",
 });
