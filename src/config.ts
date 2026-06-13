@@ -1,0 +1,50 @@
+// ════════════════════════════════════════════════════════════
+//  แก้ข้อมูลตัวเองที่ไฟล์เดียวนี้ — ทุกหน้าใช้ค่าจากตรงนี้
+// ════════════════════════════════════════════════════════════
+
+export const site = {
+  name: "Bird",
+  title: "Bird — Personal Portfolio",
+  description: "Engineer & builder — data, AI และเครื่องมือที่ทำให้คนทำงานเร็วขึ้น",
+  email: "you@example.com",
+  // คำที่พิมพ์วิ่งใน hero
+  typed: ["Engineer.", "Data & AI.", "Builder.", "Lifelong learner."],
+};
+
+export const about = {
+  bio: "เขียนเล่าตัวเองสั้นๆ ตรงนี้ — ทำอะไร สนใจอะไร มีประสบการณ์ด้านไหน แก้ได้ที่ src/config.ts",
+  facts: [
+    { icon: "🛠", label: "Skill หลัก", value: "เพิ่มของคุณเอง" },
+    { icon: "📍", label: "อยู่ที่", value: "กรุงเทพฯ" },
+    { icon: "🎯", label: "กำลังโฟกัส", value: "เพิ่มของคุณเอง" },
+  ],
+  stats: [
+    { num: 5, label: "ปีประสบการณ์" },
+    { num: 20, label: "โปรเจกต์" },
+    { num: 10, label: "งานพูด/แชร์" },
+  ],
+};
+
+export type Project = {
+  icon: string;
+  title: string;
+  desc: string;
+  tags: string[];
+  url?: string;
+};
+
+export const projects: Project[] = [
+  { icon: "🤖", title: "AI Project", desc: "อธิบายสั้นๆ ว่าทำอะไร แก้ปัญหาอะไร", tags: ["Python", "LLM"], url: "#" },
+  { icon: "📊", title: "Data Pipeline", desc: "อธิบายสั้นๆ", tags: ["Airflow", "BigQuery"], url: "#" },
+  { icon: "🌐", title: "Web App", desc: "อธิบายสั้นๆ", tags: ["TypeScript", "Astro"], url: "#" },
+];
+
+export type Social = { label: string; icon: string; url: string };
+
+export const socials: Social[] = [
+  { label: "GitHub", icon: "🐙", url: "https://github.com/" },
+  { label: "LinkedIn", icon: "in", url: "https://linkedin.com/" },
+  { label: "Medium", icon: "✍️", url: "https://medium.com/" },
+  { label: "YouTube", icon: "▶️", url: "https://youtube.com/" },
+  { label: "Email", icon: "📧", url: "mailto:you@example.com" },
+];

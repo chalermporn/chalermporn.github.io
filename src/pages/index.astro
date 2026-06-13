@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { about, projects, socials, site } from "../config";
+
+const base = import.meta.env.BASE_URL;
+
+// บล็อก 3 โพสต์ล่าสุด (ไม่เอา draft)
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<Base>
+  <Hero />
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">เกี่ยวกับผม</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>{about.bio}</p>
+          <ul class="about-list">
+            {about.facts.map((f) => (
+              <li>{f.icon} {f.label}: <strong>{f.value}</strong></li>
+            ))}
+          </ul>
+        </div>
+        <div class="about-stats">
+          {about.stats.map((s) => (
+            <div class="stat">
+              <span class="stat-num">{s.num}+</span>
+              <span class="stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section section-alt" id="work">
+    <div class="container">
+      <h2 class="section-title">ผลงาน</h2>
+      <div class="portfolio-grid">
+        {projects.map((p) => <ProjectCard project={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing -->
+  <section class="section" id="writing">
+    <div class="container">
+      <h2 class="section-title">บทความล่าสุด</h2>
+      <div class="blog-list">
+        {posts.map((post) => (
+          <a class="blog-row" href={`${base}blog/${post.id}`}>
+            <span class="ic">{post.data.icon}</span>
+            <div>
+              <span class="date">{fmt(post.data.date)}</span>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="see-more"><a href={`${base}blog`}>ดูบทความทั้งหมด →</a></p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">ติดต่อ</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>อยากชวนทำงาน พูดในงาน หรือคุยเล่น ทักได้เลยครับ</p>
+          <p>📧 <a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <div class="social-list">
+            {socials.map((s) => (
+              <a href={s.url} title={s.label} target="_blank" rel="noopener">{s.icon}</a>
+            ))}
+          </div>
+        </div>
+
+        <!-- ต่อ Formspree เพื่อรับเมลจริง: เปลี่ยน action เป็น endpoint ที่ได้มา -->
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="post">
+          <input type="text" name="name" placeholder="ชื่อของคุณ" required />
+          <input type="email" name="email" placeholder="อีเมล" required />
+          <textarea name="message" rows="4" placeholder="ข้อความ" required></textarea>
+          <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>

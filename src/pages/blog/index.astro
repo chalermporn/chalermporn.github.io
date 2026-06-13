@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const base = import.meta.env.BASE_URL;
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<Base title="Blog — Bird">
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Blog</h2>
+      <div class="blog-list">
+        {posts.map((post) => (
+          <a class="blog-row" href={`${base}blog/${post.id}`}>
+            <span class="ic">{post.data.icon}</span>
+            <div>
+              <span class="date">{fmt(post.data.date)}</span>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

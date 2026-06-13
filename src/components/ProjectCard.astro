@@ -1,0 +1,17 @@
+---
+import type { Project } from "../config";
+interface Props { project: Project }
+const { project } = Astro.props;
+const href = project.url && project.url !== "#" ? project.url : undefined;
+---
+
+<a class="card" href={href ?? "#"} {...href ? { target: "_blank", rel: "noopener" } : {}}>
+  <div class="card-thumb">{project.icon}</div>
+  <div class="card-body">
+    <h3>{project.title}</h3>
+    <p>{project.desc}</p>
+    <div>
+      {project.tags.map((t) => <span class="tag">{t}</span>)}
+    </div>
+  </div>
+</a>
