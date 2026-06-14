@@ -61,7 +61,7 @@ pre code { background: none; border: none; padding: 0; }
 .nav-links a { color: var(--text-dim); font-weight: 500; font-size: 0.95rem; }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
 .nav-actions { display: flex; align-items: center; gap: 10px; }
-.theme-toggle, .nav-burger { background: var(--surface); border: 1px solid var(--border); color: var(--text); width: 38px; height: 38px; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: var(--transition); }
+.theme-toggle, .nav-burger { background: var(--surface); border: 1px solid var(--border); color: var(--text); width: 38px; height: 38px; border-radius: 10px; cursor: pointer; display: grid; place-items: center; transition: var(--transition); }
 .theme-toggle:hover, .nav-burger:hover { border-color: var(--accent); }
 .nav-burger { display: none; }
 
@@ -137,6 +137,18 @@ pre code { background: none; border: none; padding: 0; }
 .site-footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; }
 .site-footer p { color: var(--text-dim); font-size: 0.88rem; }
 
+/* ---- Icons (Lucide ผ่าน astro-icon) ---- */
+/* ไอคอนเป็น SVG ขนาด 1em สี currentColor — คุมขนาดด้วย font-size ของ container */
+svg[data-icon] { display: inline-block; vertical-align: -0.18em; }
+.theme-toggle svg[data-icon], .nav-burger svg[data-icon] { width: 19px; height: 19px; vertical-align: 0; }
+.social-list a svg[data-icon] { width: 20px; height: 20px; }
+.about-list li svg[data-icon] { color: var(--accent); }
+.hero-kicker svg[data-icon] { color: var(--accent); }
+/* moon เมื่อ dark, sun เมื่อ light */
+.theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+
 /* ---- Reveal ---- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
@@ -149,7 +161,7 @@ pre code { background: none; border: none; padding: 0; }
   .nav-links { position: fixed; inset: 64px 0 auto 0; flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 10px 22px 18px; transform: translateY(-120%); transition: transform 0.3s ease; }
   .nav-links.open { transform: translateY(0); }
   .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .nav-burger { display: inline-block; }
+  .nav-burger { display: grid; }
   .hero { padding: 60px 0 50px; }
   .section { padding: 50px 0; }
   .blog-row { flex-direction: column; gap: 6px; }

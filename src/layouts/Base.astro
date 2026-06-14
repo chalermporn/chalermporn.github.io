@@ -53,15 +53,11 @@ const og = new URL("images/thumbnail.png", Astro.site ?? Astro.url);
     <script>
       const root = document.documentElement;
       const toggle = document.getElementById("themeToggle");
-      const syncIcon = () => {
-        if (toggle) toggle.textContent = root.getAttribute("data-theme") === "dark" ? "🌙" : "☀️";
-      };
-      syncIcon();
+      // ไอคอน moon/sun สลับด้วย CSS ตาม [data-theme] — ไม่ต้อง swap ใน JS
       toggle?.addEventListener("click", () => {
         const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", next);
         localStorage.setItem("theme", next);
-        syncIcon();
       });
 
       const burger = document.getElementById("navBurger");

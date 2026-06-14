@@ -1,11 +1,12 @@
 ---
+import { Icon } from "astro-icon/components";
 import { site } from "../config";
 const base = import.meta.env.BASE_URL;
 ---
 
 <section class="hero">
   <div class="container hero-inner">
-    <p class="hero-kicker">สวัสดีครับ 👋</p>
+    <p class="hero-kicker">สวัสดีครับ <Icon name="lucide:hand" /></p>
     <h1 class="hero-title">
       ผมชื่อ <span class="accent">{site.name}</span><br />
       <span class="typed" id="typed"></span>

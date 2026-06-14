@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 import Base from "../../layouts/Base.astro";
 
 const base = import.meta.env.BASE_URL;
@@ -16,7 +17,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
       <div class="blog-list">
         {posts.map((post) => (
           <a class="blog-row" href={`${base}blog/${post.id}`}>
-            <span class="ic">{post.data.icon}</span>
+            <span class="ic"><Icon name={`lucide:${post.data.icon}`} /></span>
             <div>
               <span class="date">{fmt(post.data.date)}</span>
               <h3>{post.data.title}</h3>

@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import { site } from "../config";
 const base = import.meta.env.BASE_URL;
 ---
@@ -17,8 +18,11 @@ const base = import.meta.env.BASE_URL;
     </nav>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-      <button class="nav-burger" id="navBurger" aria-label="Menu">☰</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+        <Icon name="lucide:moon" class="icon-moon" />
+        <Icon name="lucide:sun" class="icon-sun" />
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><Icon name="lucide:menu" /></button>
     </div>
   </div>
 </header>

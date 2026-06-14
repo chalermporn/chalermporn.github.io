@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
@@ -27,7 +28,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
           <p>{about.bio}</p>
           <ul class="about-list">
             {about.facts.map((f) => (
-              <li>{f.icon} {f.label}: <strong>{f.value}</strong></li>
+              <li><Icon name={`lucide:${f.icon}`} /> {f.label}: <strong>{f.value}</strong></li>
             ))}
           </ul>
         </div>
@@ -60,7 +61,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
       <div class="blog-list">
         {posts.map((post) => (
           <a class="blog-row" href={`${base}blog/${post.id}`}>
-            <span class="ic">{post.data.icon}</span>
+            <span class="ic"><Icon name={`lucide:${post.data.icon}`} /></span>
             <div>
               <span class="date">{fmt(post.data.date)}</span>
               <h3>{post.data.title}</h3>
@@ -69,7 +70,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
           </a>
         ))}
       </div>
-      <p class="see-more"><a href={`${base}blog`}>ดูบทความทั้งหมด →</a></p>
+      <p class="see-more"><a href={`${base}blog`}>ดูบทความทั้งหมด <Icon name="lucide:arrow-right" /></a></p>
     </div>
   </section>
 
@@ -80,10 +81,10 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
       <div class="contact-grid">
         <div class="contact-info">
           <p>อยากชวนทำงาน พูดในงาน หรือคุยเล่น ทักได้เลยครับ</p>
-          <p>📧 <a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p><Icon name="lucide:mail" /> <a href={`mailto:${site.email}`}>{site.email}</a></p>
           <div class="social-list">
             {socials.map((s) => (
-              <a href={s.url} title={s.label} target="_blank" rel="noopener">{s.icon}</a>
+              <a href={s.url} title={s.label} aria-label={s.label} target="_blank" rel="noopener"><Icon name={`lucide:${s.icon}`} /></a>
             ))}
           </div>
         </div>

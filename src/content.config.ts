@@ -8,7 +8,8 @@ const blog = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     excerpt: z.string().optional(),
-    icon: z.string().default("📝"),
+    // ชื่อ Lucide icon → https://lucide.dev/icons
+    icon: z.string().default("file-text"),
     draft: z.boolean().default(false),
   }),
 });

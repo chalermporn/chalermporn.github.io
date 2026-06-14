@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 
 // ──────────────────────────────────────────────────────────────
 // ปรับ 2 ค่านี้ตอน deploy:
@@ -10,4 +11,5 @@ export default defineConfig({
   site: "https://chalermporn.github.io",
   base: "/",
   trailingSlash: "ignore",
+  integrations: [icon()],
 });

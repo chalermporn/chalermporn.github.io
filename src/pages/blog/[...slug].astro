@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
 import Base from "../../layouts/Base.astro";
 
 export async function getStaticPaths() {
@@ -18,6 +19,6 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     <span class="meta">{fmt(post.data.date)}</span>
     <h1>{post.data.title}</h1>
     <Content />
-    <a class="back-link" href={`${base}blog`}>← กลับไปหน้า Blog</a>
+    <a class="back-link" href={`${base}blog`}><Icon name="lucide:arrow-left" /> กลับไปหน้า Blog</a>
   </article>
 </Base>
