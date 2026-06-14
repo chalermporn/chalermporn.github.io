@@ -93,6 +93,18 @@ pre code { background: none; border: none; padding: 0; }
 .stat-num { display: block; font-size: 2rem; font-weight: 600; color: var(--accent); }
 .stat-label { font-size: 0.82rem; color: var(--text-dim); }
 
+/* ---- Experience (timeline) ---- */
+.timeline { display: grid; gap: 14px; }
+.exp { display: grid; grid-template-columns: auto 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; transition: var(--transition); }
+.exp:hover { border-color: var(--accent); transform: translateX(3px); }
+.exp-ic { font-size: 1.5rem; color: var(--accent); line-height: 1; padding-top: 3px; }
+.exp-period { color: var(--accent); font-size: 0.8rem; font-weight: 500; }
+.exp h3 { font-size: 1.08rem; margin: 3px 0 2px; }
+.exp .org { color: var(--text); font-weight: 500; font-size: 0.92rem; }
+.exp .org a { color: var(--text); }
+.exp .org a:hover { color: var(--accent); }
+.exp p { color: var(--text-dim); font-size: 0.9rem; margin-top: 7px; }
+
 /* ---- Cards ---- */
 .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition); color: var(--text); display: block; }

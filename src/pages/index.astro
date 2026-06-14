@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { about, projects, socials, site } from "../config";
+import { about, experience, projects, socials, site } from "../config";
 
 const base = import.meta.env.BASE_URL;
 
@@ -44,8 +44,30 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     </div>
   </section>
 
+  <!-- Experience -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title">ประสบการณ์</h2>
+      <div class="timeline">
+        {experience.map((e) => (
+          <div class="exp">
+            <span class="exp-ic"><Icon name={`lucide:${e.icon}`} /></span>
+            <div>
+              <span class="exp-period">{e.period}</span>
+              <h3>{e.role}</h3>
+              <span class="org">
+                {e.url ? <a href={e.url} target="_blank" rel="noopener">{e.org}</a> : e.org}
+              </span>
+              {e.desc && <p>{e.desc}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Work -->
-  <section class="section section-alt" id="work">
+  <section class="section" id="work">
     <div class="container">
       <h2 class="section-title">ผลงาน</h2>
       <div class="portfolio-grid">
@@ -55,7 +77,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
   </section>
 
   <!-- Writing -->
-  <section class="section" id="writing">
+  <section class="section section-alt" id="writing">
     <div class="container">
       <h2 class="section-title">บทความล่าสุด</h2>
       <div class="blog-list">
@@ -75,7 +97,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
   </section>
 
   <!-- Contact -->
-  <section class="section section-alt" id="contact">
+  <section class="section" id="contact">
     <div class="container">
       <h2 class="section-title">ติดต่อ</h2>
       <div class="contact-grid">

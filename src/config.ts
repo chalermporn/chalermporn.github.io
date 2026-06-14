@@ -13,18 +13,68 @@ export const site = {
 };
 
 export const about = {
-  bio: "ผมเป็น software engineer ที่สนุกกับการ \"ทำของ\" มากกว่าพูดถึงมัน — เขียนเสร็จก็ ship เห็นผลไว แล้วค่อยปรับ กลางวันเขียนระบบหลังบ้านฝั่ง enterprise (clean/hexagonal architecture, ย้ายของเก่าจาก Java ไป Go) กลางคืนกับวันหยุดสร้างเครื่องมือของตัวเอง ตั้งแต่ระบบลงทะเบียนค่ายเด็กให้มูลนิธิ ไปจนถึง AI memory framework และ LLM ที่รันบนเครื่องตัวเอง สิ่งที่ยึดไว้เสมอคือ verify ก่อน ship, ไม่สร้างอะไรซับซ้อนก่อนเวลา และทำงานในจังหวะที่ไปได้ยาวๆ ไม่เผาตัวเอง",
+  bio: "ผมเป็น Full Stack Engineer ที่ธนาคารกรุงไทย (KTB) ดูแลระบบหลังบ้านฝั่ง enterprise มา 7 ปี — งานที่ได้เล่นกับสถาปัตยกรรมจริงจังอย่าง clean / hexagonal architecture และการค่อยๆ ย้ายระบบจาก Java ไป Go โดยไม่ทำให้ของเดิมพัง นอกเวลางานผมเป็นผู้ก่อตั้ง ARAYA SOFT (โค้ดมันฮา) สร้างซอฟต์แวร์ \"เพื่อมวลชน\" ตั้งแต่ระบบลงทะเบียนค่ายเด็กให้มูลนิธิ ไปจนถึง AI memory framework และ LLM ที่รันบนเครื่องตัวเอง รวมแล้วผมอยู่ในสายงานนี้มา 15 ปี และยังสนุกกับการ \"ทำของ\" ให้ง่ายแต่ใช้ได้จริงเสมอ สิ่งที่ยึดไว้คือ verify ก่อน ship, ไม่สร้างอะไรซับซ้อนก่อนเวลา และทำงานในจังหวะที่ไปได้ยาวๆ ไม่เผาตัวเอง",
   facts: [
-    { icon: "wrench", label: "ถนัด", value: "Backend · Go · TypeScript · AI/LLM" },
+    { icon: "briefcase", label: "ตอนนี้", value: "Full Stack Engineer @ KTB" },
+    { icon: "rocket", label: "ก่อตั้ง", value: "ARAYA SOFT · โค้ดมันฮา" },
     { icon: "map-pin", label: "อยู่ที่", value: "กรุงเทพฯ" },
     { icon: "target", label: "กำลังโฟกัส", value: "AI tooling & local LLM" },
   ],
   stats: [
-    { num: 5, label: "ปีประสบการณ์" },
-    { num: 20, label: "โปรเจกต์" },
-    { num: 10, label: "งานพูด/แชร์" },
+    { num: 15, label: "ปีในสายงาน" },
+    { num: 7, label: "ปีที่กรุงไทย" },
+    { num: 12, label: "ปีปั้น ARAYA SOFT" },
   ],
 };
+
+export type Experience = {
+  icon: string;
+  role: string;
+  org: string;
+  period: string;
+  desc?: string;
+  url?: string;
+};
+
+// ประสบการณ์ — เรียงใหม่ → เก่า
+export const experience: Experience[] = [
+  {
+    icon: "landmark",
+    role: "Full Stack Engineer",
+    org: "ธนาคารกรุงไทย (KTB)",
+    period: "2019 – ปัจจุบัน",
+    desc: "พัฒนาระบบหลังบ้านฝั่ง enterprise — clean / hexagonal architecture, ย้ายระบบจาก Java สู่ Go, และดู observability ทั้ง stack",
+  },
+  {
+    icon: "rocket",
+    role: "ผู้ก่อตั้ง & CEO",
+    org: "ARAYA SOFT · โค้ดมันฮา",
+    period: "2014 – ปัจจุบัน",
+    desc: "สร้างซอฟต์แวร์เพื่อมวลชน — เครื่องมือและระบบที่ใช้ได้จริง ตั้งแต่งานมูลนิธิไปจนถึงเครื่องมือ AI",
+    url: "https://codemunha.com",
+  },
+  {
+    icon: "code",
+    role: "Software Developer",
+    org: "Aspiron",
+    period: "2016 – 2019",
+    desc: "พัฒนาเว็บแอปพลิเคชันให้ลูกค้าองค์กร",
+  },
+  {
+    icon: "laptop",
+    role: "Freelance Developer",
+    org: "อิสระ",
+    period: "2015",
+    desc: "รับงานพัฒนาเว็บและซอฟต์แวร์ตามโจทย์ลูกค้า",
+  },
+  {
+    icon: "graduation-cap",
+    role: "Computer Technical Officer",
+    org: "สจล. (KMITL)",
+    period: "2011 – 2014",
+    desc: "จุดเริ่มต้นสายงาน — ดูแลระบบและงานเทคนิคคอมพิวเตอร์",
+  },
+];
 
 export type Project = {
   icon: string;
