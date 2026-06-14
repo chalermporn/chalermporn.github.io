@@ -5,19 +5,19 @@
 
 export const site = {
   name: "Bird",
-  title: "Bird — Personal Portfolio",
-  description: "Engineer & builder — data, AI และเครื่องมือที่ทำให้คนทำงานเร็วขึ้น",
-  email: "you@example.com",
+  title: "Bird — Engineer & Builder",
+  description: "Software engineer ที่ชอบทำของให้ง่ายแต่ใช้ได้จริง — backend, AI และเครื่องมือเล็กๆ ที่ทำให้ชีวิตคนทำงานดีขึ้น",
+  email: "chalermporn.po@gmail.com",
   // คำที่พิมพ์วิ่งใน hero
-  typed: ["Engineer.", "Data & AI.", "Builder.", "Lifelong learner."],
+  typed: ["Engineer.", "Builder.", "ทำของให้ง่าย.", "Verify before ship."],
 };
 
 export const about = {
-  bio: "เขียนเล่าตัวเองสั้นๆ ตรงนี้ — ทำอะไร สนใจอะไร มีประสบการณ์ด้านไหน แก้ได้ที่ src/config.ts",
+  bio: "ผมเป็น software engineer ที่สนุกกับการ \"ทำของ\" มากกว่าพูดถึงมัน — เขียนเสร็จก็ ship เห็นผลไว แล้วค่อยปรับ กลางวันเขียนระบบหลังบ้านฝั่ง enterprise (clean/hexagonal architecture, ย้ายของเก่าจาก Java ไป Go) กลางคืนกับวันหยุดสร้างเครื่องมือของตัวเอง ตั้งแต่ระบบลงทะเบียนค่ายเด็กให้มูลนิธิ ไปจนถึง AI memory framework และ LLM ที่รันบนเครื่องตัวเอง สิ่งที่ยึดไว้เสมอคือ verify ก่อน ship, ไม่สร้างอะไรซับซ้อนก่อนเวลา และทำงานในจังหวะที่ไปได้ยาวๆ ไม่เผาตัวเอง",
   facts: [
-    { icon: "wrench", label: "Skill หลัก", value: "เพิ่มของคุณเอง" },
+    { icon: "wrench", label: "ถนัด", value: "Backend · Go · TypeScript · AI/LLM" },
     { icon: "map-pin", label: "อยู่ที่", value: "กรุงเทพฯ" },
-    { icon: "target", label: "กำลังโฟกัส", value: "เพิ่มของคุณเอง" },
+    { icon: "target", label: "กำลังโฟกัส", value: "AI tooling & local LLM" },
   ],
   stats: [
     { num: 5, label: "ปีประสบการณ์" },
@@ -43,9 +43,7 @@ export const projects: Project[] = [
 export type Social = { label: string; icon: string; url: string };
 
 export const socials: Social[] = [
-  { label: "GitHub", icon: "github", url: "https://github.com/" },
-  { label: "LinkedIn", icon: "linkedin", url: "https://linkedin.com/" },
-  { label: "Medium", icon: "pen-line", url: "https://medium.com/" },
-  { label: "YouTube", icon: "youtube", url: "https://youtube.com/" },
-  { label: "Email", icon: "mail", url: "mailto:you@example.com" },
+  { label: "GitHub", icon: "github", url: "https://github.com/chalermporn" },
+  { label: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/chalermpornppos/" },
+  { label: "Email", icon: "mail", url: "mailto:chalermporn.po@gmail.com" },
 ];
