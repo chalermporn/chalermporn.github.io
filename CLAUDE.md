@@ -6,14 +6,18 @@ A static personal portfolio + Markdown blog built with **Astro 5**, deployed to 
 
 ## Commands
 
+This project uses **bun** as its package manager. The committed lockfile is `bun.lock`.
+
 ```bash
-npm install        # first time only
-npm run dev        # dev server at http://localhost:4321 (hot reload)
-npm run build      # static output to dist/
-npm run preview    # serve the real build before deploying
+bun install        # first time only
+bun run dev        # dev server at http://localhost:4321 (hot reload)
+bun run build      # static output to dist/
+bun run preview    # serve the real build before deploying
 ```
 
-There are no tests, linter, or formatter configured. Type checking comes from `astro/tsconfigs/strict` (extended in tsconfig.json); run `npm run build` to surface type errors. The committed lockfile for CI is `package-lock.json` (CI runs `npm ci`); a `bun.lock` is also present but `npm` is canonical.
+There are no tests, linter, or formatter configured. Type checking comes from `astro/tsconfigs/strict` (extended in tsconfig.json); run `bun run build` to surface type errors.
+
+> Note: the GitHub Pages workflow ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)) still installs with `npm ci` against a committed `package-lock.json`. If you standardize on bun, update CI to use `bun install` and drop `package-lock.json`; until then keep both lockfiles in sync.
 
 ## Architecture
 
