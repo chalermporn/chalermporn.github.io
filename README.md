@@ -29,7 +29,7 @@ src/
 │   ├── Header.astro
 │   ├── Hero.astro            (typed effect)
 │   ├── ProjectCard.astro
-│   └── Footer.astro
+│   └── Footer.astro           (footer + ลิงก์วงแหวนเว็บ)
 ├── pages/
 │   ├── index.astro           หน้าหลัก (about / work / writing / contact)
 │   └── blog/
@@ -40,6 +40,9 @@ public/favicon.svg
 .github/workflows/deploy.yml  CI: push main แล้ว deploy เอง
 astro.config.mjs              ⭐ ตั้ง site/base ตอน deploy
 ```
+
+ไอคอนวงแหวนเว็บใน footer ลิงก์ไปยังหน้าแรกของวงแหวน เว็บไซต์นี้ยังใช้โดเมน
+`.github.io` จึงยังไม่เข้าเกณฑ์การสมัครสมาชิกอย่างเป็นทางการของวงแหวน
 
 ## เพิ่มบทความใหม่
 
